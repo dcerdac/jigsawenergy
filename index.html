@@ -2,13 +2,149 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Vite + Tailwind</title>
-    <script type="module" crossorigin src="/jigsawenergy/assets/index-DlYJCcZK.js"></script>
-    <link rel="stylesheet" crossorigin href="/jigsawenergy/assets/index-DEEB92WP.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jigsaw Energy</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font (Montserrat) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Use your new font for the entire site */
+      body {
+        font-family: "Montserrat", sans-serif;
+        /* Updated gradient to incorporate a purple -> green/teal blend */
+        background: linear-gradient(135deg, #4f46e5, #10b981);
+        /* You can tweak or add a middle color if you want a multi-stop gradient:
+           background: linear-gradient(135deg, #4f46e5 0%, #4338ca 50%, #10b981 100%); 
+        */
+      }
+
+      .btn-transition {
+        transition: all 0.3s ease;
+      }
+
+      /* Optional: If you want a more subtle fade for the navbar background */
+      nav {
+        background-color: rgba(0, 0, 0, 0.2); /* a translucent black overlay */
+      }
+    </style>
+    <script type="module" crossorigin src="/jigsawenergy/assets/index-CNhMxf2t.js"></script>
+    <link rel="stylesheet" crossorigin href="/jigsawenergy/assets/index-Cg_ArC0t.css">
   </head>
-  <body class="flex items-center justify-center min-h-screen bg-gray-100">
-    <h1 class="text-4xl font-bold text-blue-600">
-      Jigsaw Energy
-    </h1>
+
+  <body class="text-white font-sans min-h-screen overflow-x-hidden">
+    <!-- Navbar -->
+    <nav class="flex justify-between items-center px-10 py-6 shadow-lg backdrop-blur-sm">
+      <div class="flex items-center space-x-3">
+        <!-- Updated logo reference -->
+        <img
+          src="/jigsawenergy/assets/jigsaw-OccScwCO.png"
+          alt="Jigsaw Energy"
+          class="h-16 w-auto"
+        />
+        <!-- You can use gradient text for a nice effect or keep it a solid color -->
+        <span
+          class="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-200 to-teal-200"
+        >
+          Jigsaw Energy
+        </span>
+      </div>
+      <ul class="flex space-x-10 text-xl">
+        <li>
+          <a href="#" class="hover:text-teal-300 btn-transition"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a href="#about" class="hover:text-teal-300 btn-transition"
+            >About</a
+          >
+        </li>
+        <li>
+          <a href="#solution" class="hover:text-teal-300 btn-transition"
+            >Solution</a
+          >
+        </li>
+        <li>
+          <a href="#team" class="hover:text-teal-300 btn-transition"
+            >Team</a
+          >
+        </li>
+        <li>
+          <a
+            href="#climatebase"
+            class="hover:text-teal-300 btn-transition"
+            >Climatebase Project</a
+          >
+        </li>
+        <li>
+          <a href="#contact" class="hover:text-teal-300 btn-transition"
+            >Contact</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main Section -->
+    <section class="grid md:grid-cols-3 h-[calc(100vh-88px)] shadow-lg">
+      <!-- Left column with headline and call-to-action -->
+      <div
+        class="col-span-1 flex flex-col justify-center px-10 bg-gradient-to-b from-[#1E1E2E] to-[#2B2B40]"
+      >
+        <h1 class="text-7xl font-light leading-tight">
+          Sustainable
+          <br />
+          <!-- Use a greenish color closer to your logo’s green -->
+          <span class="font-bold text-[#10b981]"
+            >Energy</span
+          >
+        </h1>
+        <p class="mt-6 text-lg text-gray-300">
+          Building a sustainable future through innovative energy
+          solutions. Transforming how energy is generated, stored, and
+          distributed to make clean energy accessible worldwide.
+        </p>
+        <a
+          href="#contact"
+          class="mt-8 inline-block px-6 py-3 rounded-md shadow-md btn-transition
+                 bg-indigo-500 hover:bg-indigo-600 text-white"
+        >
+          Get Started
+        </a>
+      </div>
+
+      <!-- Middle image (hidden on small screens) -->
+      <div
+        class="hidden md:block col-span-1 bg-cover bg-center"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e');
+        "
+      ></div>
+
+      <!-- Right image with floating button -->
+      <div
+        class="col-span-1 bg-cover bg-center relative flex items-end justify-end"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9');
+        "
+      >
+        <a
+          href="#"
+          class="absolute bottom-6 right-6 bg-indigo-600 p-3 rounded-full text-2xl hover:bg-indigo-700 btn-transition"
+          >in</a
+        >
+      </div>
+    </section>
+
+    <!-- Vue/React/Other App entry point (if needed) -->
+    <div id="app"></div>
+
+    <!-- Main JS -->
   </body>
 </html>
