@@ -18,20 +18,16 @@
       /* Use your new font for the entire site */
       body {
         font-family: "Montserrat", sans-serif;
-        /* Updated gradient to incorporate a purple -> green/teal blend */
+        /* Gradient background updated */
         background: linear-gradient(135deg, #4f46e5, #10b981);
-        /* You can tweak or add a middle color if you want a multi-stop gradient:
-           background: linear-gradient(135deg, #4f46e5 0%, #4338ca 50%, #10b981 100%); 
-        */
       }
 
       .btn-transition {
         transition: all 0.3s ease;
       }
 
-      /* Optional: If you want a more subtle fade for the navbar background */
       nav {
-        background-color: rgba(0, 0, 0, 0.2); /* a translucent black overlay */
+        background-color: rgba(0, 0, 0, 0.2);
       }
 
       .mobile-menu {
@@ -52,22 +48,39 @@
           display: block;
         }
       }
+
+      /* Optional: Add an overlay class for sections with background images */
+      .overlay {
+        position: relative;
+      }
+      .overlay::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5); /* adjust opacity as needed */
+        z-index: 0;
+      }
+      .overlay-content {
+        position: relative;
+        z-index: 1;
+      }
     </style>
-    <script type="module" crossorigin src="/jigsawenergy/assets/index-vuaMxio1.js"></script>
-    <link rel="stylesheet" crossorigin href="/jigsawenergy/assets/index-aAiH6tF2.css">
+    <script type="module" crossorigin src="/jigsawenergy/assets/index-BiWuKmBN.js"></script>
+    <link rel="stylesheet" crossorigin href="/jigsawenergy/assets/index-C6rZRQ-X.css">
   </head>
 
   <body class="text-white font-sans min-h-screen overflow-x-hidden">
     <!-- Navbar -->
     <nav class="flex flex-wrap justify-between items-center px-4 md:px-10 py-4 md:py-6 shadow-lg backdrop-blur-sm">
       <div class="flex items-center space-x-3">
-        <!-- Updated logo reference -->
         <img
           src="/jigsawenergy/assets/jigsaw-OccScwCO.png"
           alt="Jigsaw Energy"
           class="h-12 md:h-16 w-auto"
         />
-        <!-- You can use gradient text for a nice effect or keep it a solid color -->
         <span
           class="text-2xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-200 to-teal-200"
         >
@@ -78,43 +91,30 @@
       <!-- Desktop Menu -->
       <ul class="hidden md:flex space-x-6 lg:space-x-10 text-lg lg:text-xl desktop-menu">
         <li>
-          <a href="#" class="hover:text-teal-300 btn-transition"
-            >Home</a
-          >
+          <a href="#" class="hover:text-teal-300 btn-transition">Home</a>
         </li>
         <li>
-          <a href="#about" class="hover:text-teal-300 btn-transition"
-            >About</a
-          >
+          <a href="#about" class="hover:text-teal-300 btn-transition">About</a>
         </li>
         <li>
-          <a href="#solution" class="hover:text-teal-300 btn-transition"
-            >Solution</a
-          >
+          <a href="#solution" class="hover:text-teal-300 btn-transition">Solution</a>
         </li>
         <li>
-          <a href="#team" class="hover:text-teal-300 btn-transition"
-            >Team</a
-          >
+          <a href="team.html" class="hover:text-teal-300 btn-transition">Team</a>
         </li>
         <li>
-          <a
-            href="#climatebase"
-            class="hover:text-teal-300 btn-transition"
-            >Climatebase Project</a
-          >
+          <a href="climatebase.html" class="hover:text-teal-300 btn-transition">Climatebase Project</a>
         </li>
         <li>
-          <a href="#contact" class="hover:text-teal-300 btn-transition"
-            >Contact</a
-          >
+          <a href="#contact" class="hover:text-teal-300 btn-transition">Contact</a>
         </li>
       </ul>
 
       <!-- Mobile Menu Button -->
       <button class="mobile-menu p-2 rounded-md hover:bg-gray-700/50" onclick="toggleMenu()">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
       </button>
 
@@ -124,65 +124,77 @@
           <li><a href="#" class="block hover:text-teal-300 btn-transition">Home</a></li>
           <li><a href="#about" class="block hover:text-teal-300 btn-transition">About</a></li>
           <li><a href="#solution" class="block hover:text-teal-300 btn-transition">Solution</a></li>
-          <li><a href="#team" class="block hover:text-teal-300 btn-transition">Team</a></li>
-          <li><a href="#climatebase" class="block hover:text-teal-300 btn-transition">Climatebase Project</a></li>
+          <li><a href="team.html" class="block hover:text-teal-300 btn-transition">Team</a></li>
+          <li><a href="climatebase.html" class="block hover:text-teal-300 btn-transition">Climatebase Project</a></li>
           <li><a href="#contact" class="block hover:text-teal-300 btn-transition">Contact</a></li>
         </ul>
       </div>
     </nav>
 
-    <!-- Main Section -->
+    <!-- Welcome/Main Section -->
     <section class="grid md:grid-cols-3 h-[calc(100vh-88px)] shadow-lg">
       <!-- Left column with headline and call-to-action -->
-      <div
-        class="col-span-3 md:col-span-1 flex flex-col justify-center px-6 md:px-10 py-12 md:py-0 bg-gradient-to-b from-[#1E1E2E] to-[#2B2B40]"
-      >
+      <div class="col-span-3 md:col-span-1 flex flex-col justify-center px-6 md:px-10 py-12 md:py-0 bg-gradient-to-b from-[#1E1E2E] to-[#2B2B40]">
         <h1 class="text-4xl md:text-6xl lg:text-7xl font-light leading-tight">
           Sustainable
           <br />
-          <!-- Use a greenish color closer to your logo’s green -->
-          <span class="font-bold text-[#10b981]"
-            >Energy</span
-          >
+          <span class="font-bold text-[#10b981]">Energy</span>
         </h1>
-        <p class="mt-4 md:mt-6 text-base md:text-lg text-gray-300">
-          Building a sustainable future through innovative energy
-          solutions. Transforming how energy is generated, stored, and
-          distributed to make clean energy accessible worldwide.
+        <!-- Changed text-gray-300 to text-white for better readability -->
+        <p class="mt-4 md:mt-6 text-lg md:text-xl text-white">
+          Building a sustainable future through innovative energy solutions.
+          Transforming how energy is generated, stored, and distributed to
+          make clean energy accessible worldwide.
         </p>
-        <a
-          href="#contact"
-          class="mt-6 md:mt-8 inline-block px-6 py-3 rounded-md shadow-md btn-transition
-                 bg-indigo-500 hover:bg-indigo-600 text-white text-center"
-        >
+        <a href="#contact" class="mt-6 md:mt-8 inline-block px-6 py-3 rounded-md shadow-md btn-transition bg-indigo-500 hover:bg-indigo-600 text-white text-center">
           Get Started
         </a>
       </div>
 
       <!-- Middle image (hidden on small screens) -->
-      <div
-        class="hidden md:block col-span-1 bg-cover bg-center"
-        style="
-          background-image: url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e');
-        "
-      ></div>
+      <div class="hidden md:block col-span-1 bg-cover bg-center overlay" style="background-image: url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e');">
+        <div class="overlay-content h-full"></div>
+      </div>
 
       <!-- Right image with floating button -->
-      <div
-        class="hidden md:block col-span-1 bg-cover bg-center relative flex items-end justify-end"
-        style="
-          background-image: url('https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9');
-        "
-      >
-        <a
-          href="#"
-          class="absolute bottom-6 right-6 bg-indigo-600 p-3 rounded-full text-2xl hover:bg-indigo-700 btn-transition"
-          >in</a
-        >
+      <div class="hidden md:block col-span-1 bg-cover bg-center relative overlay flex items-end justify-end" style="background-image: url('https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9');">
+        <div class="overlay-content w-full h-full flex items-end justify-end">
+          <a href="#" class="absolute bottom-6 right-6 bg-indigo-600 p-3 rounded-full text-2xl hover:bg-indigo-700 btn-transition">in</a>
+        </div>
       </div>
     </section>
 
-    <!-- Vue/React/Other App entry point (if needed) -->
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 md:px-10 bg-gradient-to-b from-[#2B2B40] to-[#1E1E2E]">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-5xl font-bold mb-8">About Us</h2>
+        <p class="text-lg md:text-xl leading-relaxed">
+          A key solution is an advanced yet easy-to-use energy management platform to optimize energy use of commercial & industrial customers by intelligently orchestrating their diverse energy systems. The system includes real-time monitoring, analytics, and ML/AI-based optimization. Unlike traditional players, our solution aims to be intuitive, affordable, and quick to deploy.
+        </p>
+      </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution" class="py-20 px-6 md:px-10 bg-gradient-to-b from-[#1E1E2E] to-[#2B2B40]">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-5xl font-bold mb-8">Our Solution</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-black/20 p-6 rounded-lg backdrop-blur-sm">
+            <h3 class="text-xl font-bold mb-4">Intelligent Monitoring</h3>
+            <p>Real-time energy system monitoring with advanced analytics and insights.</p>
+          </div>
+          <div class="bg-black/20 p-6 rounded-lg backdrop-blur-sm">
+            <h3 class="text-xl font-bold mb-4">ML/AI Optimization</h3>
+            <p>Smart algorithms that optimize your energy usage and reduce costs.</p>
+          </div>
+          <div class="bg-black/20 p-6 rounded-lg backdrop-blur-sm">
+            <h3 class="text-xl font-bold mb-4">Easy Integration</h3>
+            <p>Quick to deploy and intuitive interface for seamless adoption.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <div id="app"></div>
 
     <!-- Main JS -->
