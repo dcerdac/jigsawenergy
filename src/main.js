@@ -1,10 +1,29 @@
 import './style.css'
 
-document.querySelector('#app').innerHTML = `
+document.querySelector('#app').innerHTML = ``
 
+// Initialize main page functionality
+document.addEventListener('DOMContentLoaded', () => {
+  // Mobile menu functionality
+  function toggleMenu() {
+    const mobileMenu = document.querySelector('.mobile-menu-items');
+    if (mobileMenu) {
+      mobileMenu.classList.toggle('active');
+    }
+  }
 
-  <section id="contact" class="px-4 md:px-8 lg:px-16 py-8 md:py-16">
-    <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Contact Us</h2>
-    <p class="text-base md:text-lg text-gray-600">Get in touch with us at contact@jigsawenergy.org</p>
-  </section>
-`
+  const mobileMenuButton = document.querySelector('.mobile-menu');
+  if (mobileMenuButton) {
+    mobileMenuButton.addEventListener('click', toggleMenu);
+  }
+
+  // Form submission handling
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      // Add form handling logic here
+      console.log('Form submitted');
+    });
+  }
+});

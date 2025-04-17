@@ -1,6 +1,18 @@
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vite';
+import { resolve } from 'path';
 
 export default defineConfig({
-  base: '/jigsawenergy/', // adjust this to match your repository name or custom domain path
-  // ...other configurations
-})
+  base: './',
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        team: resolve(__dirname, 'team.html'),
+        climatebase: resolve(__dirname, 'climatebase.html'),
+      },
+    },
+  },
+  server: {
+    open: true
+  }
+});

@@ -1,27 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Climatebase Project - Jigsaw Energy</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/src/style.css">
-</head>
-<body class="bg-gradient-to-br from-indigo-600 to-teal-500 min-h-screen text-white">
-    <div class="container mx-auto px-4 py-16">
-        <h1 class="text-4xl font-bold mb-8 text-center">Climatebase Project</h1>
-        <div class="max-w-3xl mx-auto bg-white/10 backdrop-blur-sm p-8 rounded-lg shadow-xl">
-            <p class="text-lg leading-relaxed mb-6">
-                Our Climatebase Project initiative focuses on developing sustainable energy solutions that address the urgent challenges of climate change. Through innovative technology and collaborative partnerships, we're working to accelerate the transition to clean energy.
-            </p>
-            <p class="text-lg leading-relaxed mb-6">
-                This project represents our commitment to creating a more sustainable future by making clean energy solutions accessible and efficient.
-            </p>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+      body {
+        font-family: "Montserrat", sans-serif;
+        background: linear-gradient(135deg, #4f46e5, #10b981);
+      }
+      nav { background-color: rgba(0, 0, 0, 0.2); }
+      .btn-transition { transition: all 0.3s ease; }
+    </style>
+  </head>
+  <body class="text-white font-sans min-h-screen">
+    <nav class="flex justify-between items-center px-10 py-6 shadow-lg backdrop-blur-sm">
+      <div class="flex items-center space-x-3">
+        <img src="./assets/images/jigsaw.png" alt="Jigsaw Energy" class="h-16 w-auto" />
+        <span class="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-200 to-teal-200">
+          Jigsaw Energy
+        </span>
+      </div>
+      <ul class="flex space-x-10 text-xl">
+        <li><a href="index.html" class="hover:text-teal-300 btn-transition">Home</a></li>
+        <li><a href="team.html" class="hover:text-teal-300 btn-transition">Team</a></li>
+      </ul>
+    </nav>
+
+    <section class="py-20 px-10">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="text-5xl font-bold mb-12 text-center">Climatebase Project</h1>
+        <div class="bg-black/20 p-8 rounded-lg backdrop-blur-sm">
+          <p class="text-xl leading-relaxed mb-8">
+            Our project aims to revolutionize energy management for commercial and industrial customers 
+            through an intelligent platform that optimizes energy usage and reduces carbon footprint.
+          </p>
+          <h2 class="text-2xl font-bold mb-4">Key Features</h2>
+          <ul class="list-disc list-inside space-y-4 text-lg">
+            <li>Real-time energy monitoring and analytics</li>
+            <li>ML/AI-powered optimization algorithms</li>
+            <li>Easy integration with existing systems</li>
+            <li>Substantial cost savings and emissions reduction</li>
+          </ul>
         </div>
-    </div>
-    <a href="/" class="fixed top-6 left-6 bg-white/10 backdrop-blur-sm p-3 rounded-lg hover:bg-white/20 transition-colors">
-        ← Back to Home
-    </a>
-</body>
+      </div>
+    </section>
+
+    <script type="module" src="./src/climatebase.js"></script>
+  </body>
 </html>
